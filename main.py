@@ -9,26 +9,21 @@ def odd(x):
     x = (3 * x) + 1
     return x
 
-counter = 0
-
 #x Wert einlesen
 while(True):
     try:
         x = float(input("Choose any positive Number: "))
-        break
+        if(x > 0):
+            break
+        else:
+            print("!ERROR_2! Choose any positive Number")
     except ValueError:
         print("!ERROR_1! Choose any positive Number")
 
-if(x <= 0):
-    print("!ERROR_2! Choose any positive Number")
-    while(True):
-        try:
-            x = float(input("Choose any positive Number: "))
-            break
-        except x:
-            print("!ERROR_1! Choose any positive Number")
-
+#Variablen
+counter = 0
 liste = [x]
+
 #Hauptschleife des Programms
 while(True):
     if(x % 2 == 0):
