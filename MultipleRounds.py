@@ -1,4 +1,7 @@
 import sys
+import matplotlib.pyplot as plt
+
+plt.style.use('_mpl-gallery')
 
 #Methoden
 def even(x):
@@ -22,13 +25,13 @@ def inputRead():
             print("!ERROR_1! Choose any positive Number")
     return x
 
-'''
-def listCreator(y: int) -> list[list]:
-    listen: list[list] = []
-    for i in range(y):
-        listen.append([])
-    return listen
-'''
+def indexGroeße(x):
+    index = []
+    counter = 0
+    while(counter < x):
+        counter = counter + 1
+        index.append(counter)
+    return index
 
 #Variablen
 cnt1 = 0
@@ -56,5 +59,8 @@ while(cnt1 < rangeList):
             if(cnt2 == 3):
                 cnt2 = 0
                 print(listen[cnt1][::])
+                
+                plt.plot(indexGroeße(len(listen[cnt1])), listen[cnt1])
+                plt.show()
                 cnt1 = cnt1 + 1
                 break
